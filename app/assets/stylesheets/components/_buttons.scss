@@ -1,0 +1,29 @@
+.btn-fluo {
+  color: black;
+  background-color: $fluo-yellow;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: normal;
+  transition: background-color 0.2s ease;
+}
+
+.btn-fluo:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-gray {
+  color: white;
+  background-color: $dark-gray;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: normal;
+  transition: background-color 0.2s ease;
+}
+
+.btn-gray:hover {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+}
