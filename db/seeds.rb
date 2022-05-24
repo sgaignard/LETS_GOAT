@@ -40,8 +40,3 @@ User.destroy_all
     goat.save!
   end
 end
-
-p User.all
-p User.count
-p Goat.all
-p Goat.count
