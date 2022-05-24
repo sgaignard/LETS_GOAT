@@ -1,4 +1,13 @@
-<%= render "components/navbar"%>
 
-<h1>Let's Goat!</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.squarespace-cdn.com/content/v1/5caca181348cd9096a444787/1572890025029-IL5H5OOKV17KLSULPB6O/bailey-mahon-AlfgSap679Y-unsplash.jpg?format=1500w);">
+  <div class="container">
+    <div class="logo"></div>
+    <h1>Let's Goat!</h1>
+    <p>There's a goat for every occasion.</p>
+    <a class="btn btn-fluo" href="#">Search</a>
+    <%= simple_form_for :search,  url: goats_path , method: :get do |f| %>
+      <%= f.input :query, autofocus: true %>
+      <%= f.submit "Search", class: "btn btn-fluo" %>
+    <% end %>
+  </div>
+</div>
