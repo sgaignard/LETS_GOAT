@@ -16,3 +16,15 @@
     <% end %>
   </div>
 </div>
+
+<br>
+<br>
+
+<div class="container">
+  <h2>Take a look at our cutest goats 😌</h2>
+  <div class="cards">
+    <% @goats.each do |goat| %>
+      <%= render "components/card" %>
+    <% end %>
+  </div>
+</div>
