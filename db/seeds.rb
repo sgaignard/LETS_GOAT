@@ -5,5 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-goat = Goat.create({ name: 'Biquette', color: 'black', gender: 'female', cuteness: 5, price: 10, user_id: 1 })
