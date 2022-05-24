@@ -13,6 +13,8 @@
   </head>
 
   <body>
+    <%= render "components/navbar" unless current_page?(root_path) %>
+
     <%= yield %>
     <span class="notice"><%= notice %></span>
     <span class="alert"><%= alert %></span>

@@ -4,9 +4,14 @@
     <div class="logo"></div>
     <h1>Let's Goat!</h1>
     <p>There's a goat for every occasion.</p>
-    <a class="btn btn-fluo" href="#">Search</a>
+    <br>
+    <br>
     <%= simple_form_for :search,  url: goats_path , method: :get do |f| %>
-      <%= f.input :query, autofocus: true %>
+      <%= f.input :query, autofocus: true, label: "What kind of goat are you looking for?" %>
+      <div class="date-container">
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+      </div>
       <%= f.submit "Search", class: "btn btn-fluo" %>
     <% end %>
   </div>
