@@ -1,0 +1,10 @@
+.logo svg {
+  fill: red;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  background-color: $fluo-yellow;
+  mask-image: url("Goat.svg");
+}
