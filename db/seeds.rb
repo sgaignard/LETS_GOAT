@@ -33,6 +33,7 @@ User.destroy_all
       color: Faker::Creature::Cat.breed,
       cuteness: rand(1..10),
       speed: rand(5..20),
+      description: Faker::GreekPhilosophers.quote
     )
     goat.name = goat.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
     goat.price = 0.3 * goat.cuteness + (1 / goat.speed) * 3
