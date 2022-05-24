@@ -1,5 +1,6 @@
 class GoatsController < ApplicationController
   def index
+    raise
     @goats = Goat.all
   end
 
