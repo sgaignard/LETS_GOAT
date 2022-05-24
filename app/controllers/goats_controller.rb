@@ -23,9 +23,9 @@ class GoatsController < ApplicationController
 
   def update
     @goat = Goat.find(params[:id])
+    @goat.user = @current_user
     @goat.update(goat_params)
 
-    # no need for app/views/restaurants/update.html.erb
     redirect_to goat_path(@goat)
   end
 
