@@ -4,6 +4,8 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <%= f.file_field :photo,
+                  input_html: { autocomplete: "Profile_photo" }%>
       <%= f.input :first_name,
                   required: true,
                   autofocus: true,

@@ -23,7 +23,7 @@ class GoatsController < ApplicationController
 
   def update
     @goat = Goat.find(params[:id])
-    @goat.user = @current_user
+    @goat.user = current_user
     @goat.update(goat_params)
 
     redirect_to goat_path(@goat)
@@ -38,6 +38,6 @@ class GoatsController < ApplicationController
   private
 
   def goat_params
-    params.require(:goat).permit(:name, :color, :cuteness, :price)
+    params.require(:goat).permit(:name, :color, :cuteness, :price, :photo)
   end
 end

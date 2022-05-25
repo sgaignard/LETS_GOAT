@@ -1,10 +1,11 @@
-.logo svg {
-  fill: red;
-}
-
 .logo {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: $fluo-yellow;
   mask-image: url("Goat.svg");
+}
+
+.navbar .logo {
+  height: 50px;
+  width: 50px;
 }
