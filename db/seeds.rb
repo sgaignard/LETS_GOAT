@@ -37,7 +37,7 @@ file_user = URI.open('https://kitt.lewagon.com/placeholder/users/ssaunier')
       description: Faker::GreekPhilosophers.quote
     )
     goat.name = goat.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
-    goat.price = 0.3 * goat.cuteness + (1 / goat.speed) * 3
+    goat.price = (0.3 * goat.cuteness + (1 / goat.speed) * 3).round(2)
     goat.photo.attach(io: file_goat, filename: goat.name, content_type: 'image/png')
     goat.user = user
     goat.save!
