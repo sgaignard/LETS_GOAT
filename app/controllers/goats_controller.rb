@@ -12,9 +12,9 @@ class GoatsController < ApplicationController
   end
 
   def create
-    @goat = Goat.new(goat)
+    @goat = Goat.new(goat_params)
     @goat.save
-    redirect_to goat_path(@goat)
+    redirect_to goats_path(@goat)
   end
 
   def edit
