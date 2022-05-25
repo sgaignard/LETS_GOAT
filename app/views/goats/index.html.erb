@@ -1,7 +1,8 @@
 <h1>Goats Index</h1>
-
-<div class="cards">
-  <% @goats.each do |goat| %>
-      <%= render "component/card_goat" %>
-  <% end %>
+<div class="container">
+  <div class="cards">
+    <% @goats.each do |goat| %>
+        <%= render "components/card_goat", goat: goat %>
+    <% end %>
+  </div>
 </div>

@@ -40,8 +40,6 @@ goat1 = Goat.new(
   goat1.user = user1
   goat1.save!
 
-
-
 file_user2 = URI.open('https://kitt.lewagon.com/placeholder/users/random')
 user2 = User.new(
   first_name: Faker::Name.first_name,
@@ -174,3 +172,32 @@ goat6 = Goat.new(
   goat6.photo.attach(io: file_goat6, filename: "#{goat6.name}", content_type: 'image/png')
   goat6.user = user6
   goat6.save!
+=======
+file_goat = URI.open('https://kitt.lewagon.com/placeholder/users/ssaunier')
+file_user = URI.open('https://kitt.lewagon.com/placeholder/users/ssaunier')
+10.times do
+  user = User.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+    )
+  user.photo.attach(io: file_user, filename: "#{user.first_name}_#{user.last_name}", content_type: 'image/png')
+  user.save!
+  3.times do
+    goat = Goat.new(
+      gender: Faker::Gender.binary_type,
+      color: Faker::Creature::Cat.breed,
+      cuteness: rand(1..10),
+      speed: rand(5..20),
+      description: Faker::GreekPhilosophers.quote
+    )
+    goat.name = goat.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
+    goat.price = (0.3 * goat.cuteness + (1 / goat.speed) * 3).round(2)
+    goat.photo.attach(io: file_goat, filename: goat.name, content_type: 'image/png')
+    goat.user = user
+    goat.save!
+  end
+end

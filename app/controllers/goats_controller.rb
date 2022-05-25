@@ -35,6 +35,10 @@ class GoatsController < ApplicationController
     redirect_to goats_path
   end
 
+  def my_goats
+    @goats = Goat.where("user_id = ?", current_user)
+  end
+
   private
 
   def goat_params

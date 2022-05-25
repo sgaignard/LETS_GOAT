@@ -2,16 +2,16 @@
 <div class='show-goat'>
   <h1 class='display-4'><%= @goat.name %></h1>
   <div class="goat-img">
+   <%# <%= cl_image_tag @goat.photo.key, height: 300, width: 400, crop: :fill%>
   </div>
 
   <div class = 'goat-info'>
    <p>Gender: <%= @goat.gender %></p>
-   <p>Color: <%= @goat.color %></p>
-   <p>Speed: <%= @goat.speed %></p>
+   <p>Specie: <%= @goat.color %></p>
+   <p>Speed(m2/day): <%= @goat.speed %></p>
    <p>Cutness:<%= @goat.cuteness %></p>
+   <p>Description:<%= @goat.description %></p>
   </div>
-
-  <p>Dzedfghjklmlkjhgtrdfghjklmlkjhytredcvghjklmlkjhgtresxcvghjklm:;,nhgfdxcvbhnj</p>
 </div>
 
 <%if @goat.user == current_user%>
