@@ -1,38 +1,20 @@
-
-<ul class="list-group">
-  <% @goats.each do |goat| %>
-    <%= link_to goat_path(goat) do %>
-      <li class="list-group-item">
         <div class="card-trip">
-
           <div class="pokemons-container">
-
             <div class="card-trip-cuteness">
               <i class="fa-solid fa-unicorn"><%= goat.cuteness %></i>
             </div>
-
             <div class="card-trip-speed">
               <i class="fa-solid fa-angles-right"><%= goat.speed %></i>
             </div>
-
-            <%= image_tag goat.image, class: "img" %>
-
+            <%= cl_image_tag goat.photo.key, class: "img" %>
           </div>
-
           <div class="card-trip-infos">
-
             <div>
               <h2><%= goat.name %> - <%= goat.gender == "male" ? ♂ : ♀ %></h2>
               <p><em><%= goat.color %></em></p>
               <p><%= goat.descritption %></p>
             </div>
-
             <h2 class="card-trip-pricing"><%= goat.price %> €</h2>
-            <%= image_tag goat.user.image, class: "card-trip-user avatar-bordered" %>
-
+            <%= cl_image_tag goat.user.photo.key, crop: :fill, class: "card-trip-user avatar-bordered" %>
           </div>
         </div>
-      </li>
-    <% end %>
-  <% end %>
-</ul>

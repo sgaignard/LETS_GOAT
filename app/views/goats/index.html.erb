@@ -1,34 +1,11 @@
 <h1>Goats Index</h1>
 
-<ul>
+<ul class="list-group">
   <% @goats.each do |goat| %>
-    <li><%= goat.name%></li>
+    <%= link_to goat_path(goat) do %>
+      <li class="list-group-item">
+        <%= render "component/card" %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
-
-<%= render "component/cards" %>
-
-<p>Link to add and to see a specific goat</p>
-
-<ul class="list-group">
-      <% @list.bookmarks.each do |bookmark| %>
-        <li class="list-group-item">
-          <div class="card-product">
-            <%= image_tag bookmark.movie.poster_url, class: "img" %>
-            <div class="card-product-infos">
-              <h2><%= bookmark.movie.title %> - <%= bookmark.movie.rating %>⭐</h2>
-              <p><%= bookmark.movie.overview %></p>
-            </div>
-            <div class="card-product-footer">
-              <div>
-                <%= bookmark.comment %>
-              </div>
-              <div>
-                <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
-              </div>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
