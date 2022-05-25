@@ -15,7 +15,7 @@ require "faker"
 Goat.destroy_all
 User.destroy_all
 
-file_goat = URI.open('https://cdn.unitycms.io/images/BNHki4wkq6n9kJ2P_gOFiY.jpg')
+file_goat = URI.open('https://kitt.lewagon.com/placeholder/users/ssaunier')
 file_user = URI.open('https://kitt.lewagon.com/placeholder/users/ssaunier')
 10.times do
   user = User.new(
