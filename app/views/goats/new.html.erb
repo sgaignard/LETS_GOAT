@@ -1,2 +1,8 @@
 <h1>Add a new Goat</h1>
-<p>Form to create with imple form?</p>
+<p>Form to create with simple form?</p>
+
+<%= simple_form_for(goat) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <!-- [...] -->
+<% end %>
