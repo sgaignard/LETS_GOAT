@@ -13,8 +13,12 @@ class GoatsController < ApplicationController
 
   def create
     @goat = Goat.new(goat_params)
-    @goat.save
-    redirect_to goats_path(@goat)
+    @goat.user = current_user
+    if @goat.save
+      redirect_to goat_path(@goat)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,7 +27,6 @@ class GoatsController < ApplicationController
 
   def update
     @goat = Goat.find(params[:id])
-    @goat.user = current_user
     @goat.update(goat_params)
 
     redirect_to goat_path(@goat)
@@ -32,11 +35,13 @@ class GoatsController < ApplicationController
   def destroy
     @goat = Goat.find(params[:id])
     @goat.destroy
+
     redirect_to goats_path
   end
 
   def my_goats
-    @goats = Goat.where("user_id = ?", current_user)
+    # raise
+    @goats = Goat.where("user_id = ?", current_user.id)
   end
 
   private
