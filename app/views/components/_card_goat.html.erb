@@ -1,0 +1,22 @@
+        <div class="card-goat">
+          <%= link_to goat_path(goat) do %>
+            <div class="pokemons-container">
+              <div class="card-goat-cuteness">
+                <i class="fa-solid fa-unicorn"><%= goat.cuteness %></i>
+              </div>
+              <div class="card-goat-speed">
+                <i class="fa-solid fa-angles-right"><%= goat.speed %></i>
+              </div>
+              <%= cl_image_tag goat.photo.key, class: "img" %>
+            </div>
+            <div class="card-goat-infos">
+              <div>
+                <h2><%= goat.name %> - <%= goat.gender == "male" ? ♂ : ♀ %></h2>
+                <p><em><%= goat.color %></em></p>
+                <p><%= goat.descritption %></p>
+              </div>
+              <h2 class="card-goat-pricing"><%= goat.price %> €</h2>
+              <%= cl_image_tag goat.user.photo.key, crop: :fill, class: "card-goat-user avatar-bordered" %>
+            </div>
+          <% end %>
+        </div>

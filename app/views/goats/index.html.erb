@@ -1,11 +1,7 @@
 <h1>Goats Index</h1>
 
-<ul class="list-group">
+<div class="cards">
   <% @goats.each do |goat| %>
-    <%= link_to goat_path(goat) do %>
-      <li class="list-group-item">
-        <%= render "component/card" %>
-      </li>
-    <% end %>
+      <%= render "component/card_goat" %>
   <% end %>
-</ul>
+</div>
