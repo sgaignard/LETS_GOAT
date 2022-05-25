@@ -1,5 +1,5 @@
-        <div class="card-goat">
-          <%= link_to goat_path(goat) do %>
+        <%= link_to goat_path(goat) do %>
+          <div class="card-goat">  
             <div class="pokemons-container">
               <div class="card-goat-cuteness">
                 <i class="fa-solid fa-unicorn"><%= goat.cuteness %></i>
@@ -19,4 +19,5 @@
               <%= cl_image_tag goat.user.photo.key, crop: :fill, class: "card-goat-user avatar-bordered" %>
             </div>
           <% end %>
-        </div>
+         </div>
+        <% end %>
