@@ -30,6 +30,7 @@
     <h2>Take a look at our cutest goats 😌</h2>
     <%= link_to "Create a Goat", new_goat_path, class: "btn btn-gray"%>
   </div>
+  <br>
   <div class="cards">
     <% @goats.each do |goat| %>
       <%= render "components/card_goat", goat: goat%>

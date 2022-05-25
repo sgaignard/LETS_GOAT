@@ -22,7 +22,7 @@ user1 = User.new(
   address: Faker::Address.full_address,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: "letsgoat"
   )
   user1.photo.attach(io: file_user1, filename: "#{user1.first_name}_#{user1.last_name}", content_type: 'image/png')
   user1.save!
@@ -48,7 +48,7 @@ user2 = User.new(
   address: Faker::Address.full_address,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: "letsgoat"
   )
   user2.photo.attach(io: file_user2, filename: "#{user2.first_name}_#{user2.last_name}", content_type: 'image/png')
   user2.save!
@@ -73,7 +73,7 @@ user3 = User.new(
   address: Faker::Address.full_address,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: "letsgoat"
   )
   user3.photo.attach(io: file_user3, filename: "#{user3.first_name}_#{user3.last_name}", content_type: 'image/png')
   user3.save!
@@ -99,7 +99,7 @@ user4 = User.new(
   address: Faker::Address.full_address,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: "letsgoat"
   )
   user4.photo.attach(io: file_user4, filename: "#{user4.first_name}_#{user4.last_name}", content_type: 'image/png')
   user4.save!
@@ -126,7 +126,7 @@ user5 = User.new(
   address: Faker::Address.full_address,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: "letsgoat"
   )
   user5.photo.attach(io: file_user5, filename: "#{user5.first_name}_#{user5.last_name}", content_type: 'image/png')
   user5.save!
@@ -152,7 +152,7 @@ user6 = User.new(
   address: Faker::Address.full_address,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   email: Faker::Internet.email,
-  password: Faker::Internet.password
+  password: "letsgoat"
   )
   user6.photo.attach(io: file_user6, filename: "#{user6.first_name}_#{user6.last_name}", content_type: 'image/png')
   user6.save!
