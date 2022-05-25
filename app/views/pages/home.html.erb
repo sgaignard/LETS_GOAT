@@ -15,10 +15,8 @@
     <% end %>
   </div>
   <% if user_signed_in? %>
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle avatar-position", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-      </div>
+  <%# add render from avatar %>
+    <%= render "components/avatar" %>
   <% else %>
     <%= link_to "Login", new_user_session_path, class: "btn btn-fluo btn-position" unless user_signed_in?%>
   <% end %>
@@ -28,7 +26,10 @@
 <br>
 
 <div class="container">
-  <h2>Take a look at our cutest goats 😌</h2>
+  <div class="home-head">
+    <h2>Take a look at our cutest goats 😌</h2>
+    <%= link_to "Create a Goat", new_goat_path, class: "btn btn-gray"%>
+  </div>
   <div class="cards">
     <% @goats.each do |goat| %>
       <%# <%= render "components/card" %>
