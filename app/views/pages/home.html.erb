@@ -32,7 +32,8 @@
   </div>
   <div class="cards">
     <% @goats.each do |goat| %>
-      <%# <%= render "components/card" %>
+      <%= goat.name %>
+      <%= render "components/card_goat" %>
     <% end %>
   </div>
 </div>
