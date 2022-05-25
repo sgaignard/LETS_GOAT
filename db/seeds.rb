@@ -35,7 +35,7 @@ goat1 = Goat.new(
   speed: rand(5..20),
   description: Faker::GreekPhilosophers.quote
 )
-  goat1.name = goat1.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
+  goat1.name = goat1.gender == "Male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
   goat1.price = (0.3 * goat1.cuteness + (1 / goat1.speed) * 3).round(2)
   goat1.photo.attach(io: file_goat1, filename: "#{goat1.name}", content_type: 'image/png')
   goat1.user = user1
@@ -60,7 +60,7 @@ goat2 = Goat.new(
   speed: rand(5..20),
   description: Faker::GreekPhilosophers.quote
 )
-  goat2.name = goat2.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
+  goat2.name = goat2.gender == "Male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
   goat2.price = (0.3 * goat2.cuteness + (1 / goat2.speed) * 3).round(2)
   goat2.photo.attach(io: file_goat2, filename: "#{goat2.name}", content_type: 'image/png')
   goat2.user = user2
@@ -86,7 +86,7 @@ goat3 = Goat.new(
   speed: rand(5..20),
   description: Faker::GreekPhilosophers.quote
 )
-  goat3.name = goat3.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
+  goat3.name = goat3.gender == "Male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
   goat3.price = (0.3 * goat3.cuteness + (1 / goat3.speed) * 3).round(2)
   goat3.photo.attach(io: file_goat3, filename: "#{goat3.name}", content_type: 'image/png')
   goat3.user = user3
@@ -112,7 +112,7 @@ goat4 = Goat.new(
   speed: rand(5..20),
   description: Faker::GreekPhilosophers.quote
 )
-  goat4.name = goat4.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
+  goat4.name = goat4.gender == "Male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
   goat4.price = (0.3 * goat4.cuteness + (1 / goat4.speed) * 3).round(2)
   goat4.photo.attach(io: file_goat4, filename: "#{goat4.name}", content_type: 'image/png')
   goat4.user = user4
@@ -139,7 +139,7 @@ goat5 = Goat.new(
   speed: rand(5..20),
   description: Faker::GreekPhilosophers.quote
 )
-  goat5.name = goat5.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
+  goat5.name = goat5.gender == "Male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
   goat5.price = (0.3 * goat5.cuteness + (1 / goat5.speed) * 3).round(2)
   goat5.photo.attach(io: file_goat5, filename: "#{goat5.name}", content_type: 'image/png')
   goat5.user = user5
@@ -165,7 +165,7 @@ goat6 = Goat.new(
   speed: rand(5..20),
   description: Faker::GreekPhilosophers.quote
 )
-  goat6.name = goat6.gender == "male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
+  goat6.name = goat6.gender == "Male" ? (Faker::Name.male_first_name) : (Faker::Name.female_first_name)
   goat6.price = (0.3 * goat6.cuteness + (1 / goat6.speed) * 3).round(2)
   goat6.photo.attach(io: file_goat6, filename: "#{goat6.name}", content_type: 'image/png')
   goat6.user = user6
