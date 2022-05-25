@@ -8,6 +8,7 @@ class GoatsController < ApplicationController
   end
 
   def new
+    raise
     @goat = Goat.new
   end
 
@@ -33,6 +34,11 @@ class GoatsController < ApplicationController
     @goat = Goat.find(params[:id])
     @goat.destroy
     redirect_to goats_path
+  end
+
+  def my_goats
+    # raise
+    @goats = Goat.where("user_id = ?", current_user)
   end
 
   private
