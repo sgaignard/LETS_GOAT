@@ -1,0 +1,5 @@
+<h1>My Goats</h1>
+
+<% @goats.each do |goat| %>
+  <%= render "components/card", goat: goat %>
+<% end %>
