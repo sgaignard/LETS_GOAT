@@ -1,11 +1,7 @@
 <h1>Goats Index</h1>
-<ul>
-  <% @goats.each do |goat| %>
-    <li>
-    <%= cl_image_tag goat.photo.key, height: 300, width: 400, crop: :fill %>
-    <%= goat.name%>
-    </li>
-  <% end %>
-</ul>
 
-<p>Link to add and to see a specific goat</p>
+<div class="cards">
+  <% @goats.each do |goat| %>
+      <%= render "component/card_goat" %>
+  <% end %>
+</div>
