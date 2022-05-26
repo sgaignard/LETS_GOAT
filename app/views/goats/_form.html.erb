@@ -5,6 +5,6 @@
   <%= f.input :price %>
   <%= f.input :speed, label: 'Mowing speed (m2/day)'%>
   <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file, error: 'Photo is mandatory, please upload one' %>
   <%= f.submit "Save your goat!", class: "btn btn-fluo" %>
 <% end %>
