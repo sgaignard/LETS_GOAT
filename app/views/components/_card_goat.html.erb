@@ -23,7 +23,7 @@
         <p><em><%= goat.color %></em></p>
         <p class="goat-description"><%= goat.description %></p>
       </div>
-      <h2 class="card-goat-pricing"><%= (goat.price*100).round(0) %>&nbsp;€</br>/day</h2>
+      <h2 class="card-goat-pricing"><%= (goat.price_per_day) %>&nbsp;€</br>/day</h2>
       <%# <h2 class="card-goat-pricing"><%= (goat.price*100).round(0)&nbsp;€</br>/100m²</h2> %>
       <%= cl_image_tag goat.user.photo.key, crop: :fill, class: "card-goat-user avatar-bordered" %>
     </div>
