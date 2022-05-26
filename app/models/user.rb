@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :goats
   # has_many :goats, through: :bookings
   has_one_attached :photo
+
+  validates :photo, presence: true
 end
