@@ -51,9 +51,9 @@ class GoatsController < ApplicationController
     redirect_to goats_path
   end
 
-  def my_goats
-    # raise
+  def dashboard
     @goats = Goat.where("user_id = ?", current_user.id)
+    @bookings = Booking.where("user_id = ?", current_user.id)
   end
 
   private
