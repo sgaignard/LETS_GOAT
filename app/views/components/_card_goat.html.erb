@@ -1,4 +1,10 @@
-<%= link_to goat_path(goat) do %>
+<% if params[:search].present? %>
+  <% goat_path = goat_path(goat, start_date: params[:search][:start_date], end_date:params[:search][:end_date]) %>
+<% else %>
+  <% goat_path = goat_path(goat) %>
+<% end %>
+
+<%= link_to goat_path do %>
   <div class="card-goat">
     <div class="pokemons-container">
       <div class="card-goat-cuteness">

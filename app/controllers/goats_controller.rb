@@ -1,10 +1,22 @@
 class GoatsController < ApplicationController
   def index
-    @goats = Goat.all
+    if params[:search][:start_date] == ""
+      @goats = Goat.all
+    else
+      start_date = Date.parse(params[:search][:start_date])
+      end_date = Date.parse(params[:search][:end_date])
+      bookings = Booking.where(start_date: start_date..end_date).or(Booking.where(end_date: start_date..end_date))
+      if bookings.first.nil?
+        @goats = Goat.all
+      else
+        @goats = Goat.where.not(bookings: bookings)
+      end
+    end
   end
 
   def show
     @goat = Goat.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

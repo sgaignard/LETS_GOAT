@@ -1,0 +1,8 @@
+<%= simple_form_for [@goat, @booking], url: goat_bookings_path(goat_id: @goat.id) , method: :post do |f| %>
+  <%= f.input :start_date, as: :date, html5: true , input_html: {value: params[:start_date]}%>
+  <%= f.input :end_date, as: :date, html5: true, input_html: {value: params[:end_date]} %>
+  <%= f.submit "Book this goat.", class: "btn btn-fluo" %>
+<% end %>
+
+
+<%# , url: goat_bookings_path , method: :post  %>
