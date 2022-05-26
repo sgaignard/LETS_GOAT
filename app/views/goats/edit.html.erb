@@ -1,11 +1,2 @@
 <h1>Edit your Goat</h1>
-<%=simple_form_for @goat do |f| %>
-  <%= f.input :name %>
-  <%= f.input :gender %>
-  <%= f.input :color, label: 'Specie' %>
-  <%= f.input :price %>
-  <%= f.input :speed, label: 'Mowing speed (m2/day)'%>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Save your goat!", class: "btn btn-primary" %>
-<% end %>
+<%= render "form", goat: @goat %>
