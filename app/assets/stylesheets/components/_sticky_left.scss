@@ -1,0 +1,15 @@
+.display-flex {
+  display: flex;
+  .booking_dates {
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      width: 25%;
+      background-color: whitesmoke;
+      margin-right: 16px;
+      padding: 16px;
+      .btn-fluo {
+        width: 100%;
+      }
+    }
+}

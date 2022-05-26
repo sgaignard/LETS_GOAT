@@ -1,8 +1,19 @@
-<h1>Goats Index</h1>
-<div class="container">
-  <div class="cards">
-    <% @goats.each do |goat| %>
-        <%= render "components/card_goat", goat: goat %>
-    <% end %>
+  <div class="display-flex">
+    <div class="booking_dates">
+      <h1>Goats Index</h1>
+      <%= simple_form_for :search,  url: goats_path , method: :get do |f| %>
+        <div class="date-container">
+          <%= f.input :start_date, as: :date, html5: true, input_html: {value: params[:search][:start_date]} %>
+          <%= f.input :end_date, as: :date, html5: true, input_html: {value: params[:search][:end_date]} %>
+        </div>
+        <div class="text-center">
+          <%= f.submit "Let it goat... again", class: "btn btn-fluo" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="cards pe-3">
+      <% @goats.each do |goat| %>
+          <%= render "components/card_goat", goat: goat %>
+      <% end %>
+    </div>
   </div>
-</div>
