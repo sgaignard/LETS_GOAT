@@ -11,4 +11,5 @@ class Goat < ApplicationRecord
   validates :price, presence: true
   validates :speed, presence: true
   validates :description, presence: true
+  validates :photo, presence: true
 end
