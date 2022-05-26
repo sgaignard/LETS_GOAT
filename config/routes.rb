@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :bookings, only: :create
   end
   resources :bookings, only: [:update, :destroy]
-  get "my_goats", to: "goats#my_goats"
+  get "dashboard", to: "goats#dashboard"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
