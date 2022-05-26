@@ -2,10 +2,12 @@
   <div class="card-goat">
     <div class="pokemons-container">
       <div class="card-goat-cuteness">
-        <%= "🦄#{goat.cuteness}" %>
+        <%= "#{goat.cuteness}🦄" %>
+        <p>/10</p>
       </div>
       <div class="card-goat-speed">
-        <%= "🌾#{goat.speed}" %></i>
+        <%= "⚡#{goat.speed}"%>
+        <p>m²/day</p>
       </div>
       <%= cl_image_tag goat.photo.key, class: "img" %>
     </div>
@@ -13,9 +15,10 @@
       <div class="description">
         <h2><%= goat.name %> - <%= goat.gender == "Male" ? "♂" : "♀" %></h2>
         <p><em><%= goat.color %></em></p>
-        <p><%= goat.description %></p>
+        <p class="goat-description"><%= goat.description %></p>
       </div>
-      <h2 class="card-goat-pricing"><%= "#{goat.price} €/day" %></h2>
+      <h2 class="card-goat-pricing"><%= (goat.price*100).round(0) %>&nbsp;€</br>/day</h2>
+      <%# <h2 class="card-goat-pricing"><%= (goat.price*100).round(0)&nbsp;€</br>/100m²</h2> %>
       <%= cl_image_tag goat.user.photo.key, crop: :fill, class: "card-goat-user avatar-bordered" %>
     </div>
   </div>
