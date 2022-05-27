@@ -6,8 +6,8 @@
     <p>Find your future goat now!</p>
     <%= simple_form_for :search,  url: goats_path , method: :get do |f| %>
       <div class="date-container">
-        <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.input :start_date, as: :date, html5: true, input_html: {value: Date.today} %>
+        <%= f.input :end_date, as: :date, html5: true, input_html: {value: Date.today.next} %>
       </div>
       <div class="text-center">
         <%= f.submit "Let it goat.", class: "btn btn-fluo" %>
