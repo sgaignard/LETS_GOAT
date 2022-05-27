@@ -4,15 +4,6 @@
     padding-top: 24px;
   }
 
-  .goat-img {
-    display: flex;
-    height: 500px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url('goat.jpg');
-  }
-
   .goat-info{
     margin-top: 24px;
     padding-top: 24px;
@@ -20,5 +11,63 @@
     padding-bottom: 24px;
     border-top: thin solid lightgrey;
     border-bottom: thin solid lightgrey;
+  }
+}
+
+.form-box {
+  background-color: whitesmoke;
+  padding: 16px;
+  height: fit-content;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.show-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 16px;
+  .form-box {
+    position: sticky;
+    top: 0;
+  }
+  .goat-img img{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (min-width: 100px) and (max-width: 575px) {
+  .show-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .show-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .show-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .show-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .show-container {
+    grid-template-columns: 2fr 1fr;
   }
 }

@@ -7,13 +7,16 @@ class BookingsController < ApplicationController
     @booking.user = user
     @booking.goat = goat
     if @booking.save
-      redirect_to "#"
+      redirect_to booking_path(@booking)
     else
       render :new
     end
   end
 
   def show
+    @booking = Booking.find(params[:id])
+    @goat = Goat.find(@booking.goat_id)
+    @user = current_user
   end
 
   # def update

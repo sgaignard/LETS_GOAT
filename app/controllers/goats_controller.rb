@@ -53,7 +53,7 @@ class GoatsController < ApplicationController
     @goat = Goat.find(params[:id])
     @goat.destroy
 
-    redirect_to goats_path
+    redirect_to root_path
   end
 
   def dashboard
