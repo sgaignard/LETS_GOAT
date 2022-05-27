@@ -11,5 +11,6 @@ export default class extends Controller {
     const bookingAmount = numOfDays * this.pricePerDayValue
     this.totalAmountTarget.innerHTML = bookingAmount
     this.totalDaysTarget.innerHTML = numOfDays
+    console.log("what's up")
   }
 }
