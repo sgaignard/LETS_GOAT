@@ -5,6 +5,8 @@
         <div class="date-container">
           <%= f.input :start_date, as: :date, html5: true, input_html: {value: params[:search][:start_date]} %>
           <%= f.input :end_date, as: :date, html5: true, input_html: {value: params[:search][:end_date]} %>
+          <%= f.input :filter_by, collection: ['price', 'cuteness', 'speed'], html5: true, input_html: {value: params[:search][:filter_by]} %>
+          <%= f.input :order_by, collection: ['ascendent', 'descendent'], html5: true, input_html: {value: params[:search][:order_by]} %>
         </div>
         <div class="text-center">
           <%= f.submit "Let it goat... again", class: "btn btn-fluo" %>
