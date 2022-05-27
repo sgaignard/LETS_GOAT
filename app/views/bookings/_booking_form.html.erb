@@ -9,12 +9,14 @@
 <%= simple_form_for [@goat, @booking], url: goat_bookings_path(goat_id: @goat.id) , method: :post, data: {controller: "booking", booking_price_per_day_value: @goat.price_per_day} do |f| %>
   <%= f.input :start_date, as: :date, html5: true , input_html: {value: start_date_value, data: {"booking-target": "startDate", action: "change->booking#updatePriceAndDays"}}%>
   <%= f.input :end_date, as: :date, html5: true, input_html: {value: end_date_value, data: {"booking-target": "endDate", action:"change->booking#updatePriceAndDays"}} %>
-  <h3><%= @goat.price_per_day %> €/day</h3>
+  <h5><%= @goat.price_per_day %> €/day</h5>
     <% start_date = Date.parse(start_date_value.to_s) %>
     <% end_date = Date.parse(end_date_value.to_s) %>
     <% number_of_days = (end_date - start_date).to_i%>
     <% booking_amount = @goat.price_per_day * number_of_days %>
-  <p>Number of booking days : <span data-booking-target="totalDays"><%= number_of_days %></span></p>
-  <h2>Amount for booking : <span data-booking-target="totalAmount"><%= booking_amount %></span> €</h2>
+  <h5>Days : <span data-booking-target="totalDays"><%= number_of_days %></span></h5>
+  <hr>
+  <h3>Amount : <span data-booking-target="totalAmount"><%= booking_amount %></span> €</h3>
+  <hr>
   <%= f.submit "Book this goat.", class: "btn btn-fluo" %>
 <% end %>

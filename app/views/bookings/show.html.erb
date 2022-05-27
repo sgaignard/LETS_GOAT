@@ -1,3 +1,10 @@
 <h1><%= @goat.name %> booked!</h1>
+<br>
+<div class="cards">
+  <div>
+    <h4><%= @booking.start_date.strftime('%a %d %b %Y')%> - <%= @booking.end_date.strftime('%a %d %b %Y')%></h4>
+    <%= render "components/card_goat", goat: @goat %>
+  </div>
+</div>
 
-<%= link_to "Book another goat?", root_path %>
+<%= link_to "Book another goat?", root_path, class:"btn btn-gray" %>
