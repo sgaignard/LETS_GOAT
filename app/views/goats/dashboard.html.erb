@@ -1,4 +1,13 @@
-<h1>Your profile</h1>
+<h1>Your Dashboard</h1>
+
+  <div class="profil">
+    <div class="avatar-container">
+      <%= render "components/avatar" %>
+      <h2>Hi <%=current_user.first_name%>!</h2>
+    </div>
+  </div>
+
+
   <h2>My Goats</h2>
   <div class="cards">
     <% @goats.each do |goat| %>
