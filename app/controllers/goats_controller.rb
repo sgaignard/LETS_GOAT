@@ -7,6 +7,15 @@ class GoatsController < ApplicationController
       end_date = Date.parse(params[:search][:end_date])
       bookings = Booking.where(start_date: start_date..end_date).or(Booking.where(end_date: start_date..end_date))
       bookings.first.nil? ? @goats = Goat.all : @goats = Goat.where.not(bookings: bookings)
+      if params[:search][:filter_by].nil? && params[:search][:order_by].nil?
+        @goats = Goat.order( "price ASC" )
+      elsif params[:search][:filter_by].nil?
+        @goats = Goat.order("price #{params[:search][:order_by] == 'ascendent' ? 'ASC' : 'DESC'}")
+      elsif params[:search][:order_by].nil?
+        @goats = Goat.order("#{params[:search][:filter_by]} ASC")
+      else
+        @goats = Goat.order("#{params[:search][:filter_by]} #{params[:search][:order_by] == 'ascendent' ? 'ASC' : 'DESC'}")
+      end
     end
   end
 
