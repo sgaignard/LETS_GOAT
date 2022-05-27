@@ -1,0 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.squarespace-cdn.com/content/v1/5caca181348cd9096a444787/1572890025029-IL5H5OOKV17KLSULPB6O/bailey-mahon-AlfgSap679Y-unsplash.jpg?format=1500w);">
+  <div class="container">
+    <div class="logo"></div>
+    <h1>Let's Goat</h1>
+    <p>Find your future goat now!</p>
+    <%= simple_form_for :search,  url: goats_path , method: :get do |f| %>
+      <div class="date-container">
+        <%= f.input :start_date, as: :date, html5: true, input_html: {value: Date.today} %>
+        <%= f.input :end_date, as: :date, html5: true, input_html: {value: Date.today.next} %>
+      </div>
+      <div class="text-center">
+        <%= f.submit "Let it goat.", class: "btn btn-fluo" %>
+      </div>
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+  <%# add render from avatar %>
+    <%= render "components/avatar" %>
+  <% else %>
+    <%= link_to "Login", new_user_session_path, class: "btn btn-fluo btn-position" unless user_signed_in?%>
+  <% end %>
+</div>

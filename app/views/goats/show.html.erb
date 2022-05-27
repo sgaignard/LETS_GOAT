@@ -1,28 +1,33 @@
-<div class="container">
 <br>
-  <%if @goat.user == current_user%>
-    <%= link_to "Delete #{@goat.name}",
-                goat_path(@goat),
-                method: :delete,
-                data: { confirm: "Are you sure?" },
-                class: "btn btn-gray"%>
-    <%= link_to 'Edit', edit_goat_path(@goat),
-                class: "btn btn-fluo"%>
-  <%end%>
-  <div class='show-goat'>
-    <h1 class='display-4'><%= @goat.name %></h1>
-    <div class="goat-img">
-    <%= cl_image_tag @goat.photo.key, crop: :fill %>
-    </div>
+<div class="show-container">
+  <div class="information">
+    <%if @goat.user == current_user%>
+      <%= link_to "Delete #{@goat.name}",
+                  goat_path(@goat),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" },
+                  class: "btn btn-gray"%>
+      <%= link_to 'Edit', edit_goat_path(@goat),
+                  class: "btn btn-fluo"%>
+    <%end%>
+    <div>
+      <h1><%= @goat.name %></h1>
+      <div class="goat-img">
+      <%= cl_image_tag @goat.photo.key, crop: :fill %>
+      </div>
 
-    <div class = 'goat-info'>
-    <p>Gender: <%= @goat.gender %></p>
-    <p>Specie: <%= @goat.color %></p>
-    <p>Speed (m²/day): <%= @goat.speed %></p>
-    <p>Cutness:<%= @goat.cuteness %></p>
-    <p>Description:<%= @goat.description %></p>
+      <div>
+      <br>
+      <p>Gender: <%= @goat.gender %></p>
+      <p>Specie: <%= @goat.color %></p>
+      <p>Speed (m²/day): <%= @goat.speed %></p>
+      <p>Cutness:<%= @goat.cuteness %></p>
+      <p>Description:<%= @goat.description %></p>
+      </div>
     </div>
   </div>
-
-  <%= render "bookings/booking_form" %>
+  <div class="form-box">
+    <h2>Book <%= @goat.name %> now!</h2>
+    <%= render "bookings/booking_form" %>
+  </div>
 </div>

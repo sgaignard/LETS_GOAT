@@ -13,8 +13,10 @@
   </head>
 
   <body>
+    <%= render "components/banner" if current_page?(root_path) %>
     <%= render "components/navbar" unless current_page?(root_path) %>
-
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
