@@ -1,21 +1,18 @@
 <h1>Your profile</h1>
-
-<div class="container">
   <h2>My Goats</h2>
   <div class="cards">
     <% @goats.each do |goat| %>
-      <%= render "components/card_goat", goat: goat %>
-    <% end %>
+      <%= render "components/card_goat", goat: goat, class:"d-block w-100" %>
+    <%end%>
   </div>
-</div>
 
-<div class="container">
-<h2>My Bookings</h2>
+  <h2>My Bookings</h2>
   <div class="cards">
     <% @bookings.each do |booking| %>
-    <p><%= booking.start_date %></p>
-      <% goat = booking.goat %>
-      <%= render "components/card_goat", goat: goat%>
-    <% end %>
+      <div>
+        <p><%= booking.start_date.strftime('%a %d %b %Y')%> - <%= booking.end_date.strftime('%a %d %b %Y') %>:</p>
+        <% goat = booking.goat %>
+        <%= render "components/card_goat", goat: goat%>
+      </div>
+    <%end%>
   </div>
-</div>
