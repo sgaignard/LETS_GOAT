@@ -1,10 +1,18 @@
+<% if params[:start_date].present? %>
+  <% start_date_value = params[:start_date] %>
+  <% end_date_value = params[:end_date] %>
+<% else %>
+  <% start_date_value = Date.today %>
+  <% end_date_value = Date.today.next %>
+<% end %>
+
   <div class="display-flex">
     <div class="booking_dates">
       <h1>Goats Index</h1>
       <%= simple_form_for :search,  url: goats_path , method: :get do |f| %>
         <div class="date-container">
-          <%= f.input :start_date, as: :date, html5: true, input_html: {value: params[:search][:start_date]} %>
-          <%= f.input :end_date, as: :date, html5: true, input_html: {value: params[:search][:end_date]} %>
+          <%= f.input :start_date, as: :date, html5: true, input_html: {value: start_date_value} %>
+          <%= f.input :end_date, as: :date, html5: true, input_html: {value: end_date_value} %>
           <%= f.input :filter_by, collection: ['price', 'cuteness', 'speed'], html5: true, input_html: {value: params[:search][:filter_by]} %>
           <%= f.input :order_by, collection: ['ascendent', 'descendent'], html5: true, input_html: {value: params[:search][:order_by]} %>
         </div>
