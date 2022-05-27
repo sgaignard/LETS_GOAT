@@ -1,6 +1,6 @@
 <%= simple_form_for [@goat, @booking], url: goat_bookings_path(goat_id: @goat.id) , method: :post, data: {controller: "booking", booking_price_per_day_value: @goat.price_per_day} do |f| %>
-  <%= f.input :start_date, as: :date, html5: true , input_html: {value: params[:start_date], data: {"booking-target": "startDate", action: "change->booking#updatePriceAndDays"}}%>
-  <%= f.input :end_date, as: :date, html5: true, input_html: {value: params[:end_date], data: {"booking-target": "endDate", action:"change->booking#updatePriceAndDays"}} %>
+    <%= f.input :start_date, as: :date, html5: true , input_html: {value: params[:start_date], data: {"booking-target": "startDate", action: "change->booking#updatePriceAndDays"}}%>
+    <%= f.input :end_date, as: :date, html5: true, input_html: {value: params[:end_date], data: {"booking-target": "endDate", action:"change->booking#updatePriceAndDays"}} %>
   <h3><%= @goat.price_per_day %> €/day</h3>
     <% start_date = Date.parse(params[:start_date]) %>
     <% end_date = Date.parse(params[:end_date]) %>
@@ -10,6 +10,3 @@
   <h2>Amount for booking : <span data-booking-target="totalAmount"><%= booking_amount %></span> €</h2>
   <%= f.submit "Book this goat.", class: "btn btn-fluo" %>
 <% end %>
-
-
-<%# , url: goat_bookings_path , method: :post  %>
